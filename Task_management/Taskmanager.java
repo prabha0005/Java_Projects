@@ -84,8 +84,12 @@ public  class Taskmanager {
         for(Map.Entry<Integer,Task> en:map.entrySet()){
             System.out.println("Task Id :"+ en.getKey()+" | "+"Task Name :"+en.getValue().getname()+
            " | "+" Task Discripion: "+en.getValue().getDisc()+" | "+"Task DueDate: "+
-           datetostring(en.getValue().getDuedate())+" | "+"Task priority: "+en.getValue().getPriority()+" | "+"Task Catagories: "+en.getValue().getCatagories());
+           datetostring(en.getValue().getDuedate())+" | "+"Task priority: "+en.getValue().getPriority()+" | "+"Task Catagories: "+settoString(en.getValue().getCatagories()));
         }
+    }
+
+    private String settoString(Set<String> catagories) {
+      return String.join(", ", catagories);
     }
 
     void viewbypriority(){
