@@ -117,4 +117,26 @@ public  class Taskmanager {
            datetostring(task.getDuedate())+" | "+"Task priority: "+task.getPriority());
         }
     }
+
+    public void viewbycatagory() {
+        Map<String,List<Task>> catamap=new HashMap<>();
+        for(Task ta:map.values()){
+            for(String s:ta.getCatagories()){
+                if(!catamap.containsKey(s)){
+                    catamap.put(s, new ArrayList<>());
+                }
+                catamap.get(s).add(ta);
+            }
+        }
+        for(Map.Entry<String,List<Task>> en:catamap.entrySet()){
+            System.out.println("------------Task under catagory  "+ en.getKey());
+            for(Task task:en.getValue()){
+            System.out.println("Task Id :"+ task.getIdcount()+" | "+"Task Name :"+task.getname()+
+           " | "+" Task Discripion: "+task.getDisc()+" | "+"Task DueDate: "+
+           datetostring(task.getDuedate())+" | "+"Task priority: "+task.getPriority()+"Task catagories: "+settoString(task.getCatagories()));
+        }
+            
+            
+        }
+    }
 }

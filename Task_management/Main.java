@@ -9,7 +9,7 @@ public class Main {
         final Taskmanager task=new Taskmanager();
         boolean isrun=true;
         while(isrun){
-            System.out.println("1.ADD TASK\n2.DISPLAY TASK\n3.View By Priority\n");
+            System.out.println("1.ADD TASK\n2.DISPLAY TASK\n3.View By Priority\n$.View By Catagory");
             System.out.println("Enter your Choice:");
             final int ch=sc.nextInt();
             sc.nextLine();
@@ -27,6 +27,10 @@ public class Main {
                 case 3:
                 System.out.println("Viewing by Task Priority...");
                 task.viewbypriority();
+                break;
+                case 4:
+                System.out.println("Viewing by Task Catagories...");
+                task.viewbycatagory();
                 break;
 
                 case 0:
